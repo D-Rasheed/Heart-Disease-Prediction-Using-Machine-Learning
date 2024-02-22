@@ -16,7 +16,7 @@ from sklearn.linear_model import LogisticRegression
 df=pd.read_csv('heart.csv')
 
 
-st.sidebar.image("https://i0.wp.com/thetechtian.com/wp-content/uploads/2022/07/Different-Sources-of-Energy.jpg?fit=1600%2C1067&ssl=1",width=300)
+st.sidebar.image("https://storage.googleapis.com/kaggle-datasets-images/888463/1508860/028af7512ea97655f9ae6e99c456b602/dataset-card.jpg?t=2020-09-23-02-22-15",width=250)
 st.sidebar.header('HEART DISEASE PREDICTION')
 menu = st.sidebar.radio(
     "Menu:",
@@ -61,7 +61,7 @@ Streamlit Doc: https://docs.streamlit.io/
 ''')
 
 elif menu == 'Data':
-   st.image("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTidu96E25gtVXJ7bhUWgNE8_6jnIbeReG5UsoDpRBAjrBxlpnUPLl164mbO6M5VzVoLRs&usqp=CAU",width=700)
+   st.image("https://www.nsmedicaldevices.com/wp-content/uploads/sites/2/2021/05/shutterstock_1303927084.png",width=700)
    st.title("DataFrame:")
    st.write(">***918 entries | 11 columns***")
    st.dataframe(df)
@@ -321,16 +321,6 @@ elif menu =='Models':
         plt.title('Precision Recall Curve of Random Forest Classifier')
         st.pyplot(fig)
 
-   #Feature Importance
-        st.write('Feature Importance of Random Forest Classifier:')
-        feature_importance = rfc.feature_importances_
-        sorted_idx = np.argsort(feature_importance)
-        fig, ax = plt.subplots()
-        plt.barh(range(len(sorted_idx)), feature_importance[sorted_idx], align='center')
-        plt.yticks(range(len(sorted_idx)), np.array(x_test.columns)[sorted_idx])
-        plt.title('Feature Importance of Random Forest Classifier')
-        plt.xlabel('Feature Importance')
-        st.pyplot(fig)
 
    #XGBoost Classifier
    if selected_model == "Xgboost":
